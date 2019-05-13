@@ -6,7 +6,9 @@ import java.lang.reflect.Constructor
 import java.util.concurrent.ConcurrentHashMap
 
 @Component
-class ObjectFactory(private val props: ConcurrentHashMap<Class<*>, Constructor<*>> = ConcurrentHashMap()) {
+class ObjectFactory {
+
+    private val props: ConcurrentHashMap<Class<*>, Constructor<*>> = ConcurrentHashMap()
 
     @Suppress("UNCHECKED_CAST")
     fun <T> create(@TargetType type: Class<T>): T {
