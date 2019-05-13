@@ -17,7 +17,6 @@ class ObjectFactory {
                 .constructors
                 .first { it.parameters.isEmpty() }
             constructor.isAccessible = true
-            this.props[type] = constructor
             constructor
         }
         return constructor.newInstance() as T
